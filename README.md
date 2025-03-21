@@ -12,6 +12,7 @@ This is a simple Spring Boot application that provides two REST API endpoints. I
 ```
 lk.ac.vau.fas.ict.Controller
   |-- AppController.java
+  |-- StudentController.java
 ```
 
 ## Setup and Running the Application
@@ -34,42 +35,38 @@ lk.ac.vau.fas.ict.Controller
      ![Screenshot (937)](https://github.com/user-attachments/assets/4df3aad0-9800-4331-9da8-39b3c8b22794)
 
      
-   - `http://localhost:8080/app/name` → Returns: **Hello I am Maleesha**
+   - `http://localhost:8080/app/name` → Returns: **My name is SpringBoot**
 
-     ##Output
-     ![Screenshot (938)](https://github.com/user-attachments/assets/51b65603-6327-4d42-b4aa-9a3ab7309955)
+     ## Output
+     
+        ![Screenshot (939)](https://github.com/user-attachments/assets/a55bfe76-89a7-47de-ae06-3187d3505ed0)
 
-
-## Code Explanation
-```
-  package lk.ac.vau.fas.ict.Controller;
-
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+      - `http://localhost:8080/app/myMessage` → Returns: **My name is Maleesha**
+    
+      ## Output
+     
+        ![Screenshot (938)](https://github.com/user-attachments/assets/eb4d5eb3-4715-4d1f-b7cb-52ea41836bad)
 
 
-@RestController
-@RequestMapping("/app")
-public class AppController {
-	@GetMapping("/msg")
-    public String MyMessage() {
-    	return "Hello SpringBoot";
-    	
-    }
-	@GetMapping("/name")
-	public String MyName() {
-    	return "Hello I am Maleesha";
-    	
-    }
-}
-```
+
+## Code Explanation AppController
+
 ```
 - `@RestController` marks this class as a RESTful web service.
 - `@RequestMapping("/app")` sets the base URL for the endpoints.
 - `@GetMapping("/msg")` maps `/msg` to return "Hello SpringBoot".
-- `@GetMapping("/name")` maps `/name` to return "Hello I am Maleesha".
+- `@GetMapping("/name")` maps `/name` to return "My name is SpringBoot".
+
+```
+
+## Code Explanation StudentController
+
+```
+- `@RestController` marks this class as a RESTful web service.
+- `@RequestMapping("/app")` sets the base URL for the endpoints.
+- `@GetMapping("/myMessage")` maps `/name` to return "My name is Maleesha".
+
+```
 
 ## License
 This project is open-source and available for educational purposes.
