@@ -42,6 +42,30 @@ lk.ac.vau.fas.ict.Controller
 
 ## Code Explanation
 ```
+  package lk.ac.vau.fas.ict.Controller;
+
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+@RequestMapping("/app")
+public class AppController {
+	@GetMapping("/msg")
+    public String MyMessage() {
+    	return "Hello SpringBoot";
+    	
+    }
+	@GetMapping("/name")
+	public String MyName() {
+    	return "Hello I am Maleesha";
+    	
+    }
+}
+```
+```
 - `@RestController` marks this class as a RESTful web service.
 - `@RequestMapping("/app")` sets the base URL for the endpoints.
 - `@GetMapping("/msg")` maps `/msg` to return "Hello SpringBoot".
